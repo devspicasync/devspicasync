@@ -9,10 +9,10 @@ export function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 md:mb-8 leading-tight">
-            Wellcom To SPICASYNC.
+            Wellcom To SPICASYNC
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Greetings from your one-stop shop for technology. Our areas of expertise include building professional websites for businesses and startups, delivering IT and academic projects, and designing mobile applications. Our mission is to help you stand out in the cutthroat digital world of today by offering dependable, creative, and scalable digital solutions.
+            We’re your one-stop tech shop—building websites, mobile apps, and IT projects. Our mission: help businesses and startups shine with reliable, creative, and scalable digital solutions.
           </p>
         </div>
       </div>

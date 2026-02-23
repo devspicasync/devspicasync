@@ -77,7 +77,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/20 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-white/60">
-          <p>&copy; 2024 Area. All rights reserved.</p>
+          <p>&copy; 2026 SpicaSync. All rights reserved.</p>
           <div className="flex gap-4 sm:gap-6">
             <a href="#" className="hover:text-white transition-colors">
               Twitter
