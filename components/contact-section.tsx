@@ -2,21 +2,21 @@ const contactInfo = [
   {
     icon: '📧',
     title: 'Email',
-    value: 'hello@area.com',
+    value: 'devspicasync@gmail.com',
     description: 'We typically respond within 24 hours',
   },
-  {
-    icon: '📱',
-    title: 'Phone',
-    value: '+1 (555) 123-4567',
-    description: 'Mon-Fri, 9am-6pm EST',
-  },
-  {
-    icon: '📍',
-    title: 'Address',
-    value: 'San Francisco, CA',
-    description: '123 Business Street, Suite 100',
-  },
+  // {
+  //   icon: '📱',
+  //   title: 'Phone',
+  //   value: '+1 (555) 123-4567',
+  //   description: 'Mon-Fri, 8am-6pm GMT',
+  // },
+  // {
+  //   icon: '📍',
+  //   title: 'Address',
+  //   value: 'San Francisco, CA',
+  //   description: '123 Business Street, Suite 100',
+  // },
 ]
 
 export function ContactSection() {
@@ -26,7 +26,7 @@ export function ContactSection() {
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 sm:mb-4">Get in Touch</h2>
           <p className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-2xl mx-auto">
-            Have questions? We'd love to hear from you. Reach out using any of the contact methods below.
+           Ready to bring your idea to life or take your business online? Let’s build something amazing together.
           </p>
         </div>
 

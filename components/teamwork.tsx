@@ -18,7 +18,7 @@ export function TeamWork() {
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">Connect with us</h2>
           <p className="text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Join thousands of successful teams who have transformed their business with Area. Get in touch with our team today.
+            Ready to bring your idea to life or take your business online? Let’s build something amazing together.
           </p>
         </div>
       </div>

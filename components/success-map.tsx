@@ -7,7 +7,7 @@ export function SuccessMap() {
     {
       number: '01',
       title: 'Get Started',
-      description: 'Sign up and create your account in minutes with our simple onboarding process'
+      description: 'Contact Us for a quick setup'
     },
     {
       number: '02',

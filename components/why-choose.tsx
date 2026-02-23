@@ -7,7 +7,7 @@ export function WhyChoose() {
     {
       name: 'Starter',
       features: [
-        'Up to 1,000 users',
+        
         'Basic analytics',
         'Email support',
         'Core features'
@@ -16,7 +16,7 @@ export function WhyChoose() {
     {
       name: 'Webscale',
       features: [
-        'Up to 10,000 users',
+       
         'Advanced analytics',
         'Priority support',
         'All features',
@@ -60,16 +60,16 @@ export function WhyChoose() {
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" className="w-full rounded-lg bg-transparent text-sm sm:text-base">
+              {/* <Button variant="outline" className="w-full rounded-lg bg-transparent text-sm sm:text-base">
                 Get Started
-              </Button>
+              </Button> */}
             </div>
           ))}
         </div>
 
-        <div className="text-center">
+        {/* <div className="text-center">
           <Button className="rounded-full px-6 sm:px-8 text-sm sm:text-base">View all plans</Button>
-        </div>
+        </div> */}
       </div>
     </section>
   )

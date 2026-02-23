@@ -16,7 +16,7 @@ export function Header() {
             onClick={() => scrollToSection('home')} 
             className="text-xl font-bold text-foreground hover:text-foreground/80 transition-colors cursor-pointer"
           >
-            Area
+            SpicaSync
           </button>
           <div className="hidden md:flex items-center gap-8 text-sm text-foreground/70">
             <button
@@ -31,12 +31,12 @@ export function Header() {
             >
               Solutions
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection('pricing')}
               className="hover:text-foreground transition-colors cursor-pointer"
             >
               Pricing
-            </button>
+            </button> */}
             <button
               onClick={() => scrollToSection('contact')}
               className="hover:text-foreground transition-colors cursor-pointer"

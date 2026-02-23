@@ -8,6 +8,7 @@ import { X } from 'lucide-react'
 
 export function FloatingMessageButton() {
   const [isOpen, setIsOpen] = useState(false)
+  const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const modalRef = useRef<HTMLDivElement>(null)
@@ -27,16 +28,27 @@ export function FloatingMessageButton() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!message.trim()) return
+    if (!message.trim() || !email.trim()) return
 
     setIsSubmitting(true)
     try {
-      // Simulate sending message
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      console.log('Message sent:', message)
-      setMessage('')
-      setIsOpen(false)
-      // You can add a success notification here
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, message }),
+      });
+
+      if (response.ok) {
+        console.log('Message sent successfully');
+        setMessage('')
+        setEmail('')
+        setIsOpen(false)
+        // You can add a success notification here
+      } else {
+        console.error('Failed to send message');
+      }
     } catch (error) {
       console.error('Failed to send message:', error)
     } finally {
@@ -80,6 +92,21 @@ export function FloatingMessageButton() {
             {/* Content */}
             <form onSubmit={handleSubmit} className="p-6 space-y-4">
               <div>
+                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                  Your email
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-foreground/50"
+                  disabled={isSubmitting}
+                  required
+                />
+              </div>
+              <div>
                 <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
                   Your message
                 </label>
@@ -107,7 +134,7 @@ export function FloatingMessageButton() {
                 <Button
                   type="submit"
                   className="flex-1 rounded-lg"
-                  disabled={isSubmitting || !message.trim()}
+                  disabled={isSubmitting || !message.trim() || !email.trim()}
                 >
                   {isSubmitting ? 'Sending...' : 'Send'}
                 </Button>

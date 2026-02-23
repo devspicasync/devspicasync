@@ -55,7 +55,7 @@ export function SolutionsSection() {
                   </li>
                 ))}
               </ul>
-              <Button className="w-full rounded-lg text-sm sm:text-base">Get Started</Button>
+              {/* <Button className="w-full rounded-lg text-sm sm:text-base">Get Started</Button> */}
             </div>
           ))}
         </div>

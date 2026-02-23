@@ -9,10 +9,10 @@ export function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8 sm:mb-10 md:mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-4 sm:mb-6 md:mb-8 leading-tight">
-            Browse everything.
+            Wellcom To SPICASYNC.
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Discover a complete solution for managing everything your business needs in one unified platform.
+            Greetings from your one-stop shop for technology. Our areas of expertise include building professional websites for businesses and startups, delivering IT and academic projects, and designing mobile applications. Our mission is to help you stand out in the cutthroat digital world of today by offering dependable, creative, and scalable digital solutions.
           </p>
         </div>
       </div>
@@ -20,7 +20,7 @@ export function Hero() {
       {/* Hero image with blue background - full width */}
       <div className="relative w-full pb-20">
         {/* Blue background - extends full width, covers bottom half */}
-        <div className="absolute inset-x-0 top-1/2 bottom-0 bg-primary rounded-t-3xl" />
+        {/* <div className="absolute inset-x-0 top-1/2 bottom-0 bg-primary rounded-t-3xl" /> */}
         
         {/* Image container - positioned relative to be on top of blue */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">

@@ -1,0 +1,31 @@
+Starting...
+[baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+ ✓ Ready in 802ms
+ ○ Compiling / ...
+ GET / 200 in 8.8s (compile: 8.2s, render: 691ms)
+Nodemailer Error: Error: connect ECONNREFUSED 127.0.0.1:587
+    at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:587) {
+  errno: -4078,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 587,
+  command: 'CONN'
+}
+ POST /api/send-email 500 in 874ms (compile: 778ms, render: 96ms)
+
+
+
+## Error Type
+Console Error
+
+## Error Message
+Failed to send message
+
+
+    at createConsoleError (file://C:/my_project/work/SpicaSync/build-website-with-next-js (2)/.next/dev/static/chunks/node_modules_next_dist_7a8122d0._.js:2189:71)
+    at handleConsoleError (file://C:/my_project/work/SpicaSync/build-website-with-next-js (2)/.next/dev/static/chunks/node_modules_next_dist_7a8122d0._.js:2970:54)
+    at console.error (file://C:/my_project/work/SpicaSync/build-website-with-next-js (2)/.next/dev/static/chunks/node_modules_next_dist_7a8122d0._.js:3114:57)
+    at handleSubmit (file://C:/my_project/work/SpicaSync/build-website-with-next-js (2)/.next/dev/static/chunks/_182fc183._.js:148:25)
+
+Next.js version: 16.0.10 (Turbopack)

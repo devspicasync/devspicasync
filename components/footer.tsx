@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12 md:mb-16">
           <div className="col-span-2 sm:col-span-1">
-            <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">Area</h3>
+            <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">SpicaSync</h3>
             <p className="text-xs sm:text-sm text-white/60">
               The complete platform for managing your business.
             </p>
@@ -21,9 +21,9 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                {/* <a href="#" className="hover:text-white transition-colors">
                   Pricing
-                </a>
+                </a> */}
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">

@@ -1,0 +1,9 @@
+i have floating button "floating-message-button.tsx" that i have setup a code for a Nodemailer. the Idea is that who ever visit my website can send me message. i t will go in to my inbox. but when i check my code and the code from the Nodemailer website the setup is different. i want to use "App Password" and this is the code from the their website "const transporter = nodemailer.createTransport({
+  service: "GmailWorkspace",
+  auth: {
+    user: "me@mydomain.com",
+    pass: process.env.GOOGLE_APP_PASSWORD,
+  },
+});"
+
+my code is not that way why? so i want you check "floating-message-button.tsx" and ".env" file and the Nodemailer logic for me ok

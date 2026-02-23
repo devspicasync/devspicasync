@@ -2,24 +2,24 @@ import { Button } from '@/components/ui/button'
 
 const products = [
   {
-    icon: '📊',
-    title: 'Analytics Dashboard',
-    description: 'Real-time data visualization with advanced charts, metrics tracking, and custom reporting capabilities to understand your business performance.',
+    icon: '📱',
+    title: 'Mobile App Development',
+    description: 'Android and cross-platform apps designed for performance and usability',
   },
   {
-    icon: '🤖',
-    title: 'AI Assistant',
-    description: 'Intelligent automation that learns from your patterns and provides smart recommendations to streamline your workflows.',
+    icon: '💼',
+    title: 'Startup & Business Solutions',
+    description: 'From idea to launch, we help bring your business online',
   },
   {
-    icon: '🔐',
-    title: 'Security & Compliance',
-    description: 'Enterprise-grade security with end-to-end encryption, role-based access control, and compliance with GDPR and SOC 2.',
+    icon: '💻',
+    title: 'Website Development',
+    description: 'Company websites, startup websites, and custom web solutions.',
   },
   {
     icon: '🔄',
-    title: 'Integrations',
-    description: 'Seamlessly connect with your favorite tools including Slack, Salesforce, HubSpot, and 500+ other applications.',
+    title: '3.	IT Projects & Research ',
+    description: 'Academic, final-year, and professional IT projects with proper documentation',
   },
 ]
 
@@ -43,9 +43,9 @@ export function ProductsSection() {
               <div className="text-4xl sm:text-5xl mb-4">{product.icon}</div>
               <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-3 sm:mb-4">{product.title}</h3>
               <p className="text-sm sm:text-base text-foreground/70 mb-6">{product.description}</p>
-              <Button variant="outline" className="w-full rounded-lg bg-transparent text-sm sm:text-base">
+              {/* <Button variant="outline" className="w-full rounded-lg bg-transparent text-sm sm:text-base">
                 Learn More
-              </Button>
+              </Button> */}
             </div>
           ))}
         </div>
