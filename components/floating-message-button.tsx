@@ -10,6 +10,8 @@ import { toast } from 'sonner'
 export function FloatingMessageButton() {
   const [isOpen, setIsOpen] = useState(false)
   const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
   const [message, setMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const modalRef = useRef<HTMLDivElement>(null)
@@ -38,13 +40,15 @@ export function FloatingMessageButton() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, message }),
+        body: JSON.stringify({ email, message, name, phone }),
       });
 
       if (response.ok) {
         toast.success('Message sent successfully! We will get back to you soon.')
         setMessage('')
         setEmail('')
+        setName('')
+        setPhone('')
         setIsOpen(false)
       } else {
         toast.error('Failed to send message. Please try again later.')
@@ -91,38 +95,69 @@ export function FloatingMessageButton() {
             </div>
 
             {/* Content */}
-            <form onSubmit={handleSubmit} className="p-6 space-y-4">
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Your email
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com"
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-foreground/50"
-                  disabled={isSubmitting}
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Your message
-                </label>
-                <textarea
-                  id="message"
-                  value={message}
-                  onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Type your message here..."
-                  rows={4}
-                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none text-foreground placeholder-foreground/50"
-                  disabled={isSubmitting}
-                />
+            <form onSubmit={handleSubmit} className="p-6 space-y-4 max-h-[80vh] overflow-y-auto">
+              <div className="grid grid-cols-1 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                    Name (optional)
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Your name"
+                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-foreground/50"
+                    disabled={isSubmitting}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    Your email
+                  </label>
+                  <input
+                    id="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-foreground/50"
+                    disabled={isSubmitting}
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                    Phone (optional)
+                  </label>
+                  <input
+                    id="phone"
+                    type="tel"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="Your phone number"
+                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 text-foreground placeholder-foreground/50"
+                    disabled={isSubmitting}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    Your message
+                  </label>
+                  <textarea
+                    id="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Type your message here..."
+                    rows={4}
+                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 resize-none text-foreground placeholder-foreground/50"
+                    disabled={isSubmitting}
+                    required
+                  />
+                </div>
               </div>
 
-              <div className="flex gap-3">
+              <div className="flex gap-3 pt-2">
                 <Button
                   type="button"
                   variant="outline"

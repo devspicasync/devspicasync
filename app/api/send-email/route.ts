@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     });
 
     // Create custom email content
-    const emailSubject = subject || 'New Message from Website Contact Form';
+    const emailSubject = subject || 'New Message from SpicaSync  ';
     
     const htmlContent = `
       <div style="font-family: sans-serif; padding: 20px; color: #333; border: 1px solid #eee; border-radius: 8px;">
