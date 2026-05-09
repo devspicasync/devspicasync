@@ -26,20 +26,30 @@ export default function ContactPage() {
     e.preventDefault()
     setIsSubmitting(true)
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      console.log('Form submitted:', formData)
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        subject: '',
-        message: ''
-      })
-      // You can add a success message here
-      alert('Thank you for your message! We will get back to you soon.')
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Thank you for your message! We will get back to you soon.')
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          subject: '',
+          message: ''
+        })
+      } else {
+        const errorData = await response.json()
+        alert(errorData.error || 'Failed to send message. Please try again later.')
+      }
     } catch (error) {
       console.error('Failed to submit form:', error)
+      alert('An error occurred. Please try again later.')
     } finally {
       setIsSubmitting(false)
     }

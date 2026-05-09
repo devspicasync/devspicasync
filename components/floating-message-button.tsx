@@ -5,6 +5,7 @@ import React from "react"
 import { useState, useRef, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { X } from 'lucide-react'
+import { toast } from 'sonner'
 
 export function FloatingMessageButton() {
   const [isOpen, setIsOpen] = useState(false)
@@ -41,15 +42,15 @@ export function FloatingMessageButton() {
       });
 
       if (response.ok) {
-        console.log('Message sent successfully');
+        toast.success('Message sent successfully! We will get back to you soon.')
         setMessage('')
         setEmail('')
         setIsOpen(false)
-        // You can add a success notification here
       } else {
-        console.error('Failed to send message');
+        toast.error('Failed to send message. Please try again later.')
       }
     } catch (error) {
+      toast.error('An error occurred. Please try again later.')
       console.error('Failed to send message:', error)
     } finally {
       setIsSubmitting(false)
