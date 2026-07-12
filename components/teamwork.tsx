@@ -1,25 +1,38 @@
 'use client'
 
 import Image from 'next/image'
+import { Reveal } from '@/components/reveal'
 
 export function TeamWork() {
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
+    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="rounded-2xl sm:rounded-3xl aspect-video bg-gray-200 relative overflow-hidden mb-8 sm:mb-10 md:mb-12">
-          <Image
-            src="/images/workflow.jpg"
-            alt="Team workflow and collaboration"
-            fill
-            className="object-cover"
-          />
-        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <Reveal className="order-2 md:order-1">
+            <span className="eyebrow">How we work</span>
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+              Behind every project, real collaboration
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-foreground/70 leading-relaxed">
+              We treat your product like our own. You stay in the loop at every step — from the
+              first sketch to launch day — with clear communication, quick feedback, and a team
+              that actually enjoys building great things.
+            </p>
+          </Reveal>
 
-        <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-3 sm:mb-4">Connect with us</h2>
-          <p className="text-sm sm:text-base md:text-lg text-foreground/70 mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Ready to bring your idea to life or take your business online? Let’s build something amazing together.
-          </p>
+          <Reveal delay={120} className="order-1 md:order-2 relative">
+            <div className="absolute -inset-4 bg-brand-gradient opacity-15 blur-2xl rounded-[2rem] -z-10" />
+            <div className="relative rounded-3xl border border-border bg-card p-2 shadow-xl">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/workflow.jpg"
+                  alt="Team workflow and collaboration"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

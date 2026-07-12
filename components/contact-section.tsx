@@ -1,44 +1,80 @@
-const contactInfo = [
-  {
-    icon: '📧',
-    title: 'Email',
-    value: 'devspicasync@gmail.com',
-    description: 'We typically respond within 24 hours',
-  },
-  // {
-  //   icon: '📱',
-  //   title: 'Phone',
-  //   value: '+1 (555) 123-4567',
-  //   description: 'Mon-Fri, 8am-6pm GMT',
-  // },
-  // {
-  //   icon: '📍',
-  //   title: 'Address',
-  //   value: 'San Francisco, CA',
-  //   description: '123 Business Street, Suite 100',
-  // },
+'use client'
+
+import { Mail, Clock, MessageSquare, ArrowRight, Check } from 'lucide-react'
+import { Reveal } from '@/components/reveal'
+
+const promises = [
+  'A reply within 24 hours',
+  'A free, no-pressure chat about your idea',
+  'Honest advice on the best way to build it',
 ]
 
 export function ContactSection() {
-  return (
-    <section id="contact" className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 sm:mb-4">Get in Touch</h2>
-          <p className="text-sm sm:text-base md:text-lg text-foreground/70 max-w-2xl mx-auto">
-           Ready to bring your idea to life or take your business online? Let’s build something amazing together.
-          </p>
-        </div>
+  const openMessage = () => {
+    window.dispatchEvent(new CustomEvent('open-message-modal'))
+  }
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {contactInfo.map((info, index) => (
-            <div key={index} className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-border">
-              <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">{info.icon}</div>
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-1 sm:mb-2">{info.title}</h3>
-              <p className="font-semibold text-foreground mb-1">{info.value}</p>
-              <p className="text-xs sm:text-sm text-foreground/70">{info.description}</p>
+  return (
+    <section
+      id="contact"
+      className="scroll-mt-20 py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-muted/40 border-y border-border/60"
+    >
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <Reveal>
+            <span className="eyebrow">Get in touch</span>
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+              Let&apos;s build something amazing together
+            </h2>
+            <p className="mt-4 text-base sm:text-lg text-foreground/70">
+              Ready to bring your idea to life or take your business online? Tell us what you
+              have in mind — we&apos;d love to help.
+            </p>
+            <ul className="mt-8 space-y-4">
+              {promises.map((item) => (
+                <li key={item} className="flex items-center gap-3 text-foreground/80">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <Check className="h-3.5 w-3.5" strokeWidth={3} />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+
+          <Reveal delay={120} className="relative">
+            <div className="absolute -inset-4 bg-brand-gradient opacity-10 blur-2xl rounded-[2rem] -z-10" />
+            <div className="rounded-3xl border border-border bg-card p-7 sm:p-9 shadow-xl">
+              <div className="flex items-start gap-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Mail className="h-6 w-6" />
+                </span>
+                <div>
+                  <h3 className="text-lg font-semibold text-foreground">Email us</h3>
+                  <a
+                    href="mailto:devspicasync@gmail.com"
+                    className="text-primary font-medium hover:underline break-all"
+                  >
+                    devspicasync@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="mt-6 flex items-center gap-3 rounded-xl bg-muted/70 px-4 py-3 text-sm text-foreground/70">
+                <Clock className="h-4 w-4 text-primary shrink-0" />
+                We typically respond within 24 hours.
+              </div>
+
+              <button
+                onClick={openMessage}
+                className="group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand-gradient px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:brightness-110 hover:shadow-primary/40"
+              >
+                <MessageSquare className="h-4 w-4" />
+                Send us a message
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </button>
             </div>
-          ))}
+          </Reveal>
         </div>
       </div>
     </section>

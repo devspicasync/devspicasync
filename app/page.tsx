@@ -5,12 +5,11 @@ import { ProductsSection } from '@/components/products-section'
 import { SolutionsSection } from '@/components/solutions-section'
 import { Collaboration } from '@/components/collaboration'
 import { BigPicture } from '@/components/big-picture'
-import { WhyChoose } from '@/components/why-choose'
 import { Testimonial } from '@/components/testimonial'
 import { SuccessMap } from '@/components/success-map'
-import { PricingSection } from '@/components/pricing-section' // Added import for PricingSection
-import { ContactSection } from '@/components/contact-section'
+import { WhyChoose } from '@/components/why-choose'
 import { TeamWork } from '@/components/teamwork'
+import { ContactSection } from '@/components/contact-section'
 import { CTA } from '@/components/cta'
 import { Footer } from '@/components/footer'
 
@@ -26,11 +25,11 @@ export default function Home() {
       <SolutionsSection />
       <Collaboration />
       <BigPicture />
-      <WhyChoose />
       <Testimonial />
       <SuccessMap />
-      <ContactSection />
+      <WhyChoose />
       <TeamWork />
+      <ContactSection />
       <CTA />
       <Footer />
     </main>

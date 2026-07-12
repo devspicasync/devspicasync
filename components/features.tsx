@@ -1,46 +1,67 @@
 'use client'
 
+import { Zap, LineChart, Blocks, Rocket } from 'lucide-react'
+import { Reveal } from '@/components/reveal'
+
+const features = [
+  {
+    icon: Zap,
+    title: 'Rapid delivery',
+    description: 'From first call to launch, we move fast with a clear process and no surprises.',
+    tint: 'text-primary bg-primary/10',
+  },
+  {
+    icon: LineChart,
+    title: 'Smart & data-driven',
+    description: 'We build with analytics baked in, so every decision is backed by real insight.',
+    tint: 'text-brand-violet bg-brand-violet/10',
+  },
+  {
+    icon: Blocks,
+    title: 'Seamless integration',
+    description: 'Payments, APIs, dashboards — we connect cleanly to the tools you already use.',
+    tint: 'text-brand-cyan bg-brand-cyan/10',
+  },
+  {
+    icon: Rocket,
+    title: 'Built to scale',
+    description: 'Clean, modern architecture that grows with you — from MVP to full product.',
+    tint: 'text-emerald-500 bg-emerald-500/10',
+  },
+]
+
 export function Features() {
-  const features = [
-    {
-      icon: '⚡',
-      title: 'Rapid Intake',
-      description: 'Streamline your process with automated data collection'
-    },
-    {
-      icon: '📊',
-      title: 'Smart Analysis',
-      description: 'Transform data into actionable insights instantly'
-    },
-    {
-      icon: '🔄',
-      title: 'Dynamic Integration',
-      description: 'Seamlessly connect with your existing workflow'
-    },
-    {
-      icon: '🚀',
-      title: 'Enterprise Ready',
-      description: 'Scale without boundaries or compromises'
-    }
-  ]
-
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-background">
+    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-10 sm:mb-12 md:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2 sm:mb-4">We've cracked the code.</h2>
-          <p className="text-sm sm:text-base md:text-lg text-foreground/70">
-            Our platform combines cutting-edge technology with proven strategies
+        <Reveal className="max-w-2xl mb-12 sm:mb-16">
+          <span className="eyebrow">Why SpicaSync</span>
+          <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+            We&apos;ve cracked the code.
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-foreground/70">
+            Cutting-edge technology meets a proven, human process — so your idea ships
+            reliably and looks the part.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {features.map((feature, index) => (
-            <div key={index} className="flex flex-col">
-              <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{feature.icon}</div>
-              <h3 className="text-lg sm:text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
-              <p className="text-sm sm:text-base text-foreground/70">{feature.description}</p>
-            </div>
+            <Reveal
+              key={feature.title}
+              delay={index * 90}
+              className="group card-lift rounded-2xl border border-border bg-card p-6 sm:p-7 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5"
+            >
+              <div
+                className={`flex h-12 w-12 items-center justify-center rounded-xl ${feature.tint} transition-transform duration-300 group-hover:scale-110`}
+              >
+                <feature.icon className="h-6 w-6" strokeWidth={2} />
+              </div>
+              <h3 className="mt-5 text-lg font-semibold text-foreground">{feature.title}</h3>
+              <p className="mt-2 text-sm sm:text-base text-foreground/70 leading-relaxed">
+                {feature.description}
+              </p>
+            </Reveal>
           ))}
         </div>
       </div>

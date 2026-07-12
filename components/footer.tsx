@@ -1,94 +1,102 @@
 'use client'
 
+import Image from 'next/image'
+import { Twitter, Linkedin, Github, Mail } from 'lucide-react'
+
+const columns = [
+  {
+    title: 'Services',
+    links: [
+      { label: 'Website Development', href: '#products' },
+      { label: 'Mobile Apps', href: '#products' },
+      { label: 'IT Projects', href: '#products' },
+      { label: 'Solutions', href: '#solutions' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'Why SpicaSync', href: '#why' },
+      { label: 'How it works', href: '#solutions' },
+      { label: 'Contact', href: '#contact' },
+    ],
+  },
+  {
+    title: 'Get in touch',
+    links: [
+      { label: 'devspicasync@gmail.com', href: 'mailto:devspicasync@gmail.com' },
+      { label: 'Start a project', href: '#contact' },
+    ],
+  },
+]
+
+const socials = [
+  { icon: Twitter, label: 'Twitter', href: '#' },
+  { icon: Linkedin, label: 'LinkedIn', href: '#' },
+  { icon: Github, label: 'GitHub', href: '#' },
+  { icon: Mail, label: 'Email', href: 'mailto:devspicasync@gmail.com' },
+]
+
 export function Footer() {
   return (
-    <footer className="bg-foreground text-white py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12 md:mb-16">
-          <div className="col-span-2 sm:col-span-1">
-            <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-4">SpicaSync</h3>
-            <p className="text-xs sm:text-sm text-white/60">
-              The complete platform for managing your business.
+    <footer className="relative bg-foreground text-white overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
+      <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-64 w-[600px] rounded-full bg-primary/20 blur-[100px]" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-20">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 mb-12">
+          <div className="col-span-2">
+            <div className="flex items-center gap-2.5">
+              <span className="relative h-9 w-9 overflow-hidden rounded-xl shadow-lg shadow-primary/30 ring-1 ring-white/15">
+                <Image
+                  src="/spicasync-mark.png"
+                  alt="SpicaSync logo"
+                  fill
+                  sizes="36px"
+                  className="object-cover"
+                />
+              </span>
+              <span className="text-lg font-semibold font-display tracking-tight">SpicaSync</span>
+            </div>
+            <p className="mt-4 text-sm text-white/60 max-w-xs leading-relaxed">
+              Your one-stop tech partner — building websites, mobile apps, and IT projects that
+              help your business shine.
             </p>
+            <div className="mt-6 flex gap-2.5">
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/15 bg-white/5 text-white/70 transition-all hover:bg-white/10 hover:text-white hover:border-white/30"
+                >
+                  <social.icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
 
-          <div>
-            <h4 className="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Product</h4>
-            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-white/60">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Features
-                </a>
-              </li>
-              <li>
-                {/* <a href="#" className="hover:text-white transition-colors">
-                  Pricing
-                </a> */}
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Security
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Company</h4>
-            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-white/60">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Careers
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Legal</h4>
-            <ul className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-white/60">
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Terms
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+          {columns.map((column) => (
+            <div key={column.title}>
+              <h4 className="font-semibold text-sm mb-4">{column.title}</h4>
+              <ul className="space-y-2.5 text-sm text-white/60">
+                {column.links.map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="transition-colors hover:text-white break-words">
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="border-t border-white/20 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-white/60">
+        <div className="border-t border-white/15 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-white/50">
           <p>&copy; 2026 SpicaSync. All rights reserved.</p>
-          <div className="flex gap-4 sm:gap-6">
-            <a href="#" className="hover:text-white transition-colors">
-              Twitter
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              LinkedIn
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              GitHub
-            </a>
-          </div>
+          <p className="flex items-center gap-1.5">
+            Built with <span className="text-primary">♥</span> for founders &amp; builders.
+          </p>
         </div>
       </div>
     </footer>

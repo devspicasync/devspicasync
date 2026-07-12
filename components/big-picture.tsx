@@ -1,47 +1,77 @@
 'use client'
 
 import Image from 'next/image'
+import { Activity, FileBarChart, Lock } from 'lucide-react'
+import { Reveal } from '@/components/reveal'
+
+const features = [
+  {
+    icon: Activity,
+    title: 'Real-time analytics',
+    description: 'Live dashboards and instant notifications so you always know how things are performing.',
+    tint: 'text-primary bg-primary/10',
+  },
+  {
+    icon: FileBarChart,
+    title: 'Advanced reporting',
+    description: 'Comprehensive reports with custom filters and clear visualizations you can act on.',
+    tint: 'text-brand-violet bg-brand-violet/10',
+  },
+  {
+    icon: Lock,
+    title: 'Data security',
+    description: 'Modern encryption and best-practice compliance to keep your data safe.',
+    tint: 'text-emerald-500 bg-emerald-500/10',
+  },
+]
 
 export function BigPicture() {
-  const features = [
-    {
-      title: 'Real-time Analytics',
-      description: 'Monitor all your metrics with live dashboards and instant notifications'
-    },
-    {
-      title: 'Advanced Reporting',
-      description: 'Generate comprehensive reports with custom filters and visualizations'
-    },
-    {
-      title: 'Data Security',
-      description: 'Enterprise-grade encryption and compliance with global standards'
-    }
-  ]
-
   return (
-    <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
+    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-muted/40 border-y border-border/60">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
-          <div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-6 sm:mb-8 md:mb-10">See the Big Picture</h2>
-            <div className="space-y-4 sm:space-y-5 md:space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <Reveal>
+            <span className="eyebrow">Clarity by design</span>
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
+              See the big picture
+            </h2>
+            <p className="mt-4 text-base text-foreground/70">
+              We don&apos;t just build — we give you the visibility to make confident decisions.
+            </p>
+            <div className="mt-8 space-y-6">
               {features.map((feature, index) => (
-                <div key={index}>
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold text-foreground mb-1 sm:mb-2">{feature.title}</h3>
-                  <p className="text-sm sm:text-base text-foreground/70">{feature.description}</p>
-                </div>
+                <Reveal key={feature.title} delay={index * 90} className="flex gap-4">
+                  <span
+                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${feature.tint}`}
+                  >
+                    <feature.icon className="h-5 w-5" strokeWidth={2} />
+                  </span>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-semibold text-foreground">
+                      {feature.title}
+                    </h3>
+                    <p className="mt-1 text-sm sm:text-base text-foreground/70 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </Reveal>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          <div className="rounded-2xl sm:rounded-3xl aspect-square bg-gray-200 relative overflow-hidden mt-6 md:mt-0">
-            <Image
-              src="/images/analytics-illustration.jpg"
-              alt="Analytics and data visualization"
-              fill
-              className="object-cover"
-            />
-          </div>
+          <Reveal delay={120} className="relative">
+            <div className="absolute -inset-4 bg-brand-gradient opacity-15 blur-2xl rounded-[2rem] -z-10" />
+            <div className="relative rounded-3xl border border-border bg-card p-2 shadow-xl">
+              <div className="relative aspect-square overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/analytics-illustration.jpg"
+                  alt="Analytics and data visualization"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>
