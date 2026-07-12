@@ -1,6 +1,29 @@
+import type { Metadata } from 'next'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
+
+export const metadata: Metadata = {
+  title: 'Solutions for Every Business',
+  description:
+    'Tailored digital solutions from SpicaSync for enterprises, SMBs, startups and agencies — whatever your size or stage, we build the right fit.',
+  keywords: [
+    'enterprise solutions',
+    'startup solutions',
+    'SMB software',
+    'agency solutions',
+    'custom software development',
+    'scalable web apps',
+  ],
+  alternates: { canonical: '/solutions' },
+  openGraph: {
+    title: 'Solutions for Every Business | SpicaSync',
+    description:
+      'Tailored digital solutions for enterprises, SMBs, startups and agencies.',
+    url: '/solutions',
+    images: ['/og-image.png'],
+  },
+}
 
 export default function SolutionsPage() {
   const solutions = [

@@ -1,6 +1,29 @@
+import type { Metadata } from 'next'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
+
+export const metadata: Metadata = {
+  title: 'Products & Services',
+  description:
+    'Explore SpicaSync products and services — website development, mobile apps, business solutions and IT projects built to help you grow.',
+  keywords: [
+    'website development',
+    'mobile app development',
+    'analytics dashboard',
+    'automation',
+    'IT products',
+    'custom software',
+  ],
+  alternates: { canonical: '/products' },
+  openGraph: {
+    title: 'Products & Services | SpicaSync',
+    description:
+      'Website development, mobile apps, business solutions and IT projects built to help you grow.',
+    url: '/products',
+    images: ['/og-image.png'],
+  },
+}
 
 export default function ProductsPage() {
   const products = [

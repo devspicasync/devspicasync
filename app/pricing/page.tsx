@@ -1,6 +1,21 @@
+import type { Metadata } from 'next'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { Button } from '@/components/ui/button'
+
+export const metadata: Metadata = {
+  title: 'Pricing',
+  description:
+    'Simple, transparent pricing from SpicaSync. Choose the plan that fits your business — from startups to enterprise, with a free trial to get started.',
+  keywords: ['pricing', 'plans', 'web development pricing', 'app development cost'],
+  alternates: { canonical: '/pricing' },
+  openGraph: {
+    title: 'Pricing | SpicaSync',
+    description: 'Simple, transparent pricing — choose the plan that fits your business.',
+    url: '/pricing',
+    images: ['/og-image.png'],
+  },
+}
 
 export default function PricingPage() {
   const plans = [
