@@ -1,6 +1,14 @@
 'use client'
 
-import { Smartphone, Briefcase, Globe, FlaskConical, ArrowUpRight } from 'lucide-react'
+import {
+  Smartphone,
+  Briefcase,
+  Globe,
+  FlaskConical,
+  BarChart3,
+  BrainCircuit,
+  ArrowUpRight,
+} from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 
 const products = [
@@ -24,6 +32,16 @@ const products = [
     title: 'IT Projects & Research',
     description: 'Academic, final-year, and professional IT projects with proper documentation.',
   },
+  {
+    icon: BarChart3,
+    title: 'Data Analysis',
+    description: 'Turn your raw data into clear reports and dashboards you can act on.',
+  },
+  {
+    icon: BrainCircuit,
+    title: 'Data Science',
+    description: 'Predictive models and machine learning that help you spot what comes next.',
+  },
 ]
 
 export function ProductsSection() {
@@ -40,7 +58,7 @@ export function ProductsSection() {
           </p>
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {products.map((product, index) => (
             <Reveal
               key={product.title}

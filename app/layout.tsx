@@ -117,6 +117,8 @@ const jsonLd = {
           'Mobile App Development',
           'Startup & Business Solutions',
           'IT Projects & Research',
+          'Data Analysis',
+          'Data Science',
           'UI/UX Design',
         ].map((service) => ({
           '@type': 'Offer',
