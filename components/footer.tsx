@@ -39,15 +39,12 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="relative bg-foreground text-white overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent" />
-      <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-64 w-[600px] rounded-full bg-primary/20 blur-[100px]" />
-
+    <footer className="relative bg-primary text-white">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16 md:py-20">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 mb-12">
           <div className="col-span-2">
             <div className="flex items-center gap-2.5">
-              <span className="relative h-9 w-9 overflow-hidden rounded-xl shadow-lg shadow-primary/30 ring-1 ring-white/15">
+              <span className="relative h-9 w-9 overflow-hidden rounded-md ring-1 ring-white/20">
                 <Image
                   src="/spicasync-mark.png"
                   alt="SpicaSync logo"
@@ -59,7 +56,7 @@ export function Footer() {
               <span className="text-lg font-semibold font-display tracking-tight">SpicaSync</span>
             </div>
             <p className="mt-4 text-sm text-white/60 max-w-xs leading-relaxed">
-              Your one-stop tech partner — building websites, mobile apps, and IT projects that
+              Your one-stop tech partner, building websites, mobile apps, and IT projects that
               help your business shine.
             </p>
             <div className="mt-6 flex gap-2.5">

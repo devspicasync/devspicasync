@@ -10,7 +10,6 @@ const solutions = [
     description:
       'Comprehensive platforms built for large organizations with complex workflows and advanced security.',
     features: ['Custom integrations', 'Dedicated support', 'Advanced analytics', 'White-label options'],
-    tint: 'text-primary bg-primary/10',
   },
   {
     icon: Rocket,
@@ -18,7 +17,6 @@ const solutions = [
     description:
       'Affordable, scalable solutions designed to help startups grow fast without breaking the bank.',
     features: ['Quick setup', 'Flexible pricing', 'Growth tools', 'Ongoing support'],
-    tint: 'text-brand-violet bg-brand-violet/10',
   },
   {
     icon: Store,
@@ -26,7 +24,6 @@ const solutions = [
     description:
       'The perfect balance of features and affordability for businesses looking to scale efficiently.',
     features: ['All core features', 'Team collaboration', 'Reporting', 'API access'],
-    tint: 'text-brand-cyan bg-brand-cyan/10',
   },
   {
     icon: Palette,
@@ -34,7 +31,6 @@ const solutions = [
     description:
       'Multi-client management with white-label capabilities to deliver for your clients seamlessly.',
     features: ['Client management', 'White-labeling', 'Reseller program', 'Priority support'],
-    tint: 'text-amber-500 bg-amber-500/10',
   },
 ]
 
@@ -60,21 +56,19 @@ export function SolutionsSection() {
             <Reveal
               key={solution.title}
               delay={index * 90}
-              className="group card-lift flex flex-col rounded-2xl border border-border bg-card p-6 sm:p-7 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5"
+              className="card-lift flex flex-col rounded-md border border-border bg-card p-6 sm:p-7"
             >
-              <div
-                className={`flex h-12 w-12 items-center justify-center rounded-xl ${solution.tint} transition-transform duration-300 group-hover:scale-110`}
-              >
+              <div className="flex h-12 w-12 items-center justify-center rounded-md bg-secondary text-primary">
                 <solution.icon className="h-6 w-6" strokeWidth={2} />
               </div>
               <h3 className="mt-5 text-lg font-semibold text-foreground">{solution.title}</h3>
-              <p className="mt-2 text-sm text-foreground/70 leading-relaxed">
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 {solution.description}
               </p>
-              <ul className="mt-5 space-y-2.5 pt-5 border-t border-border/70">
+              <ul className="mt-5 space-y-2.5 pt-5 border-t border-border">
                 {solution.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-2.5 text-sm text-foreground/80">
-                    <span className="flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <li key={feature} className="flex items-center gap-2.5 text-sm text-foreground">
+                    <span className="flex h-4.5 w-4.5 shrink-0 items-center justify-center rounded-full bg-secondary text-primary">
                       <Check className="h-3 w-3" strokeWidth={3} />
                     </span>
                     {feature}

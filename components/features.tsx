@@ -8,25 +8,21 @@ const features = [
     icon: Zap,
     title: 'Rapid delivery',
     description: 'From first call to launch, we move fast with a clear process and no surprises.',
-    tint: 'text-primary bg-primary/10',
   },
   {
     icon: LineChart,
     title: 'Smart & data-driven',
     description: 'We build with analytics baked in, so every decision is backed by real insight.',
-    tint: 'text-brand-violet bg-brand-violet/10',
   },
   {
     icon: Blocks,
     title: 'Seamless integration',
-    description: 'Payments, APIs, dashboards — we connect cleanly to the tools you already use.',
-    tint: 'text-brand-cyan bg-brand-cyan/10',
+    description: 'Payments, APIs and dashboards. We connect cleanly to the tools you already use.',
   },
   {
     icon: Rocket,
     title: 'Built to scale',
-    description: 'Clean, modern architecture that grows with you — from MVP to full product.',
-    tint: 'text-emerald-500 bg-emerald-500/10',
+    description: 'Clean, modern architecture that grows with you, from MVP to full product.',
   },
 ]
 
@@ -39,8 +35,8 @@ export function Features() {
           <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
             We&apos;ve cracked the code.
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-foreground/70">
-            Cutting-edge technology meets a proven, human process — so your idea ships
+          <p className="mt-4 text-base sm:text-lg text-muted-foreground">
+            Cutting-edge technology meets a proven, human process, so your idea ships
             reliably and looks the part.
           </p>
         </Reveal>
@@ -50,15 +46,13 @@ export function Features() {
             <Reveal
               key={feature.title}
               delay={index * 90}
-              className="group card-lift rounded-2xl border border-border bg-card p-6 sm:p-7 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5"
+              className="card-lift rounded-md border border-border bg-card p-6 sm:p-7"
             >
-              <div
-                className={`flex h-12 w-12 items-center justify-center rounded-xl ${feature.tint} transition-transform duration-300 group-hover:scale-110`}
-              >
+              <div className="flex h-12 w-12 items-center justify-center rounded-md bg-secondary text-primary">
                 <feature.icon className="h-6 w-6" strokeWidth={2} />
               </div>
               <h3 className="mt-5 text-lg font-semibold text-foreground">{feature.title}</h3>
-              <p className="mt-2 text-sm sm:text-base text-foreground/70 leading-relaxed">
+              <p className="mt-2 text-sm sm:text-base text-muted-foreground leading-relaxed">
                 {feature.description}
               </p>
             </Reveal>

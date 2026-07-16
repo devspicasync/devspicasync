@@ -9,25 +9,22 @@ const features = [
     icon: Activity,
     title: 'Real-time analytics',
     description: 'Live dashboards and instant notifications so you always know how things are performing.',
-    tint: 'text-primary bg-primary/10',
   },
   {
     icon: FileBarChart,
     title: 'Advanced reporting',
     description: 'Comprehensive reports with custom filters and clear visualizations you can act on.',
-    tint: 'text-brand-violet bg-brand-violet/10',
   },
   {
     icon: Lock,
     title: 'Data security',
     description: 'Modern encryption and best-practice compliance to keep your data safe.',
-    tint: 'text-emerald-500 bg-emerald-500/10',
   },
 ]
 
 export function BigPicture() {
   return (
-    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-muted/40 border-y border-border/60">
+    <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 lg:px-8 bg-secondary border-y border-border">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
           <Reveal>
@@ -35,22 +32,20 @@ export function BigPicture() {
             <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
               See the big picture
             </h2>
-            <p className="mt-4 text-base text-foreground/70">
-              We don&apos;t just build — we give you the visibility to make confident decisions.
+            <p className="mt-4 text-base text-muted-foreground">
+              We don&apos;t just build. We give you the visibility to make confident decisions.
             </p>
             <div className="mt-8 space-y-6">
               {features.map((feature, index) => (
                 <Reveal key={feature.title} delay={index * 90} className="flex gap-4">
-                  <span
-                    className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${feature.tint}`}
-                  >
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-card border border-border text-primary">
                     <feature.icon className="h-5 w-5" strokeWidth={2} />
                   </span>
                   <div>
                     <h3 className="text-base sm:text-lg font-semibold text-foreground">
                       {feature.title}
                     </h3>
-                    <p className="mt-1 text-sm sm:text-base text-foreground/70 leading-relaxed">
+                    <p className="mt-1 text-sm sm:text-base text-muted-foreground leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -60,9 +55,8 @@ export function BigPicture() {
           </Reveal>
 
           <Reveal delay={120} className="relative">
-            <div className="absolute -inset-4 bg-brand-gradient opacity-15 blur-2xl rounded-[2rem] -z-10" />
-            <div className="relative rounded-3xl border border-border bg-card p-2 shadow-xl">
-              <div className="relative aspect-square overflow-hidden rounded-2xl">
+            <div className="border border-border bg-card p-2">
+              <div className="relative aspect-square overflow-hidden">
                 <Image
                   src="/images/analytics-illustration.jpg"
                   alt="Analytics and data visualization"

@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 export const metadata: Metadata = {
   title: 'Solutions for Every Business',
   description:
-    'Tailored digital solutions from SpicaSync for enterprises, SMBs, startups and agencies — whatever your size or stage, we build the right fit.',
+    'Tailored digital solutions from SpicaSync for enterprises, SMBs, startups and agencies. Whatever your size or stage, we build the right fit.',
   keywords: [
     'enterprise solutions',
     'startup solutions',

@@ -1,5 +1,5 @@
 /**
- * Central site configuration — used by metadata, sitemap and robots.
+ * Central site configuration, used by metadata, sitemap and robots.
  * Override the base URL per-environment with NEXT_PUBLIC_SITE_URL if needed.
  */
 export const siteUrl = (
@@ -9,7 +9,7 @@ export const siteUrl = (
 export const siteName = 'SpicaSync'
 
 export const siteDescription =
-  'SpicaSync is your one-stop tech partner — we build fast websites, mobile apps, and IT projects that help startups and businesses shine online.'
+  'SpicaSync is your one-stop tech partner. We build fast websites, mobile apps, and IT projects that help startups and businesses shine online.'
 
 /** Keywords covering our services, tech stack and audience so we surface for more searches. */
 export const siteKeywords = [

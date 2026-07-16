@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'SpicaSync — Websites, Mobile Apps & IT Solutions',
+    default: 'SpicaSync: Websites, Mobile Apps & IT Solutions',
     template: '%s | SpicaSync',
   },
   description: siteDescription,
@@ -38,20 +38,20 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteUrl,
     siteName,
-    title: 'SpicaSync — Websites, Mobile Apps & IT Solutions',
+    title: 'SpicaSync: Websites, Mobile Apps & IT Solutions',
     description: siteDescription,
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'SpicaSync — Websites, Apps & IT Solutions',
+        alt: 'SpicaSync: Websites, Apps & IT Solutions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SpicaSync — Websites, Mobile Apps & IT Solutions',
+    title: 'SpicaSync: Websites, Mobile Apps & IT Solutions',
     description: siteDescription,
     images: ['/og-image.png'],
   },

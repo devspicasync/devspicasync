@@ -75,27 +75,25 @@ export function FloatingMessageButton() {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="group fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-brand-gradient text-primary-foreground shadow-xl shadow-primary/40 transition-all hover:scale-110 hover:shadow-primary/60"
+        className="group fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-lg transition-colors hover:bg-[#16407f]"
         aria-label="Send us a message"
       >
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/40 opacity-60 [animation-duration:2.5s]" />
         <MessageCircle className="relative h-6 w-6" />
       </button>
 
       {/* Modal Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 bg-foreground/40 backdrop-blur-sm flex items-end sm:items-center justify-center p-4 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-50 bg-foreground/50 flex items-end sm:items-center justify-center p-4 animate-in fade-in duration-200">
           {/* Modal */}
           <div
             ref={modalRef}
-            className="bg-card rounded-t-2xl sm:rounded-2xl shadow-2xl w-full sm:w-[26rem] max-w-md border border-border animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-300"
+            className="bg-card rounded-t-md sm:rounded-md shadow-lg w-full sm:w-[26rem] max-w-md border border-border animate-in slide-in-from-bottom-4 sm:zoom-in-95 duration-300"
           >
             {/* Header */}
-            <div className="relative overflow-hidden rounded-t-2xl bg-brand-gradient px-6 py-5">
-              <div className="pointer-events-none absolute inset-0 bg-grid opacity-20" />
-              <div className="relative flex items-center justify-between">
+            <div className="rounded-t-md bg-primary px-6 py-5">
+              <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2.5 text-primary-foreground">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/20">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-md bg-white/15">
                     <Sparkles className="h-4 w-4" />
                   </span>
                   <div>
@@ -187,7 +185,7 @@ export function FloatingMessageButton() {
                 </button>
                 <button
                   type="submit"
-                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-gradient px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:brightness-110 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[#16407f] disabled:opacity-60 disabled:cursor-not-allowed"
                   disabled={isSubmitting || !message.trim() || !email.trim()}
                 >
                   {isSubmitting ? (

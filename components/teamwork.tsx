@@ -13,17 +13,16 @@ export function TeamWork() {
             <h2 className="mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground">
               Behind every project, real collaboration
             </h2>
-            <p className="mt-4 text-base sm:text-lg text-foreground/70 leading-relaxed">
-              We treat your product like our own. You stay in the loop at every step — from the
-              first sketch to launch day — with clear communication, quick feedback, and a team
+            <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              We treat your product like our own. You stay in the loop at every step, from the
+              first sketch to launch day, with clear communication, quick feedback, and a team
               that actually enjoys building great things.
             </p>
           </Reveal>
 
           <Reveal delay={120} className="order-1 md:order-2 relative">
-            <div className="absolute -inset-4 bg-brand-gradient opacity-15 blur-2xl rounded-[2rem] -z-10" />
-            <div className="relative rounded-3xl border border-border bg-card p-2 shadow-xl">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="border border-border bg-card p-2">
+              <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src="/images/workflow.jpg"
                   alt="Team workflow and collaboration"

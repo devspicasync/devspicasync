@@ -34,10 +34,8 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'glass border-b border-border/70 shadow-[0_4px_30px_-12px_rgba(30,30,80,0.25)]'
-          : 'bg-transparent border-b border-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 bg-background transition-colors duration-200 ${
+        scrolled ? 'border-b border-border' : 'border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,7 +46,7 @@ export function Header() {
             className="flex items-center gap-2.5 group"
             aria-label="SpicaSync home"
           >
-            <span className="relative h-9 w-9 overflow-hidden rounded-xl shadow-lg shadow-primary/25 ring-1 ring-border transition-transform duration-300 group-hover:scale-105">
+            <span className="relative h-9 w-9 overflow-hidden rounded-md ring-1 ring-border">
               <Image
                 src="/spicasync-mark.png"
                 alt="SpicaSync logo"
@@ -57,8 +55,8 @@ export function Header() {
                 className="object-cover"
               />
             </span>
-            <span className="text-lg font-semibold font-display tracking-tight text-foreground">
-              Spica<span className="text-gradient">Sync</span>
+            <span className="text-lg font-semibold font-display tracking-tight text-primary">
+              SpicaSync
             </span>
           </button>
 
@@ -68,7 +66,7 @@ export function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="px-4 py-2 text-sm font-medium text-foreground/70 rounded-lg hover:text-foreground hover:bg-muted transition-colors"
+                className="px-4 py-2 text-sm font-medium text-muted-foreground rounded-md hover:text-primary hover:bg-secondary transition-colors"
               >
                 {item.label}
               </button>
@@ -78,7 +76,7 @@ export function Header() {
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={() => scrollToSection('contact')}
-              className="group inline-flex items-center gap-2 rounded-xl bg-brand-gradient px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:shadow-primary/40 hover:brightness-110"
+              className="group inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[#16407f]"
             >
               Start a project
               <span className="transition-transform group-hover:translate-x-0.5">→</span>
@@ -87,7 +85,7 @@ export function Header() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-lg text-foreground hover:bg-muted transition-colors"
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-foreground hover:bg-secondary transition-colors"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -98,20 +96,20 @@ export function Header() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden glass border-t border-border/70 animate-in slide-in-from-top-2 fade-in duration-200">
+        <div className="md:hidden bg-background border-t border-border animate-in slide-in-from-top-2 fade-in duration-200">
           <nav className="px-4 py-4 flex flex-col gap-1">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="px-4 py-3 text-left text-base font-medium text-foreground/80 rounded-lg hover:bg-muted transition-colors"
+                className="px-4 py-3 text-left text-base font-medium text-foreground rounded-md hover:bg-secondary transition-colors"
               >
                 {item.label}
               </button>
             ))}
             <button
               onClick={() => scrollToSection('contact')}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-brand-gradient px-4 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground"
             >
               Start a project →
             </button>
